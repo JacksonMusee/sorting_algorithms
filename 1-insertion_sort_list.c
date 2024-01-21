@@ -12,18 +12,10 @@ void insertion_sort_list(listint_t **list)
 	listint_t *jst_b4;
 	listint_t *resume;
 	bool swapped = true;
-	listint_t *mvn_nd;
+	listint_t *mvn_nd = NULL;
 
-	if (!list)
-	{
-		exit(EXIT_SUCCESS);
-
-	}
-	else
-	{
+	if (list)
 		mvn_nd = *list;
-	}
-
 	while (mvn_nd != NULL)
 	{
 		resume = mvn_nd->next;
