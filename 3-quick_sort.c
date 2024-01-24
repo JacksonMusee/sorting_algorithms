@@ -49,10 +49,13 @@ void quick_sort(int *array, size_t size)
 			}
 		}
 	}
-	tmp = array[j];
-	array[j] = array[pv];
-	array[pv] = tmp;
-	print_array(arr, sz);
+	if (array[j] != array[pv])
+	{
+		tmp = array[j];
+		array[j] = array[pv];
+		array[pv] = tmp;
+		print_array(arr, sz);
+	}
 	quick_sort(array, j);
 	quick_sort(array + j + 1, size - j - 1);
 }
