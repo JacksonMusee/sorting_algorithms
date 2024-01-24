@@ -11,10 +11,17 @@
 void quick_sort(int *array, size_t size)
 {
 	int tmp;
-	size_t sz = size;
+	static size_t sz;
+	static int *arr = NULL;
 	size_t pv = size - 1;
 	size_t i = 0;
 	size_t j = 0;
+
+	if (arr == NULL)
+	{
+		arr = array;
+		sz = size;
+	}
 
 	if (size < 2)
 		return;
@@ -38,14 +45,14 @@ void quick_sort(int *array, size_t size)
 				array[i] = tmp;
 				j++;
 				i++;
-				print_array(array, sz);
+				print_array(arr, sz);
 			}
 		}
 	}
 	tmp = array[j];
 	array[j] = array[pv];
 	array[pv] = tmp;
-	print_array(array, sz);
+	print_array(arr, sz);
 	quick_sort(array, j);
 	quick_sort(array + j + 1, size - j - 1);
 }
