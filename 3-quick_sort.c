@@ -23,7 +23,7 @@ void quick_sort(int *array, size_t size)
 		sz = size;
 	}
 
-	if (size < 2)
+	if (size < 2 || array == NULL)
 		return;
 	while (i < pv)
 	{
